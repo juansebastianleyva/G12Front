@@ -1,10 +1,10 @@
 $("document").ready(function(){
 	getAudience();
 });
-
+var URL='https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience';
 function getAudience(){
 	$.ajax({    
-	    url : 'https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience',
+	    url : URL,
 	   // data : { id : 123 },
 	    type : 'GET',
 	    dataType : 'json',
@@ -64,7 +64,7 @@ function saveAudience(){
 	let dataToSend=JSON.stringify(myData);
 
 	$.ajax({    
-	    url : 'https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience',
+	    url : URL,
 	   data : dataToSend,
 	    type : 'POST',
 //	    dataType : 'json',
@@ -85,7 +85,7 @@ function saveAudience(){
 
 function getAudienceById(idAudience){
 	$.ajax({    
-	    url : 'https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience/'+idAudience,
+	    url : URL+'/'+idAudience,
 	   // data : { id : 123 },
 	    type : 'GET',
 	    dataType : 'json',
@@ -113,7 +113,7 @@ function updateAudience(){
 	let dataToSend=JSON.stringify(myData);
 
 	$.ajax({    
-	    url : 'https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience',
+	    url : URL,
 	   	data : dataToSend,
 	    type : 'PUT',
 //	    dataType : 'json',
@@ -140,7 +140,7 @@ function deleteAudience(idToDelete){
 	let dataToSend=JSON.stringify(data);
 
 	$.ajax({    
-	    url : 'https://g2cbaa8b17db98e-mhjt5avpexvy4xs4.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/audience/audience',
+	    url : URL,
 	   	data : dataToSend,
 	    type : 'DELETE',
 //	    dataType : 'json',
